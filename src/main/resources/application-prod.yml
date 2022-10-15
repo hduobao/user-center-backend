@@ -7,6 +7,7 @@ spring:
     password: HF1314...
   session:
     timeout: 86400
-
-
+server
+server:
+  address: 0.0.0.0
 
