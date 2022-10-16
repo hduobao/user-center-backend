@@ -1,0 +1,14 @@
+com\hf\usercenter\controller\UserController.class
+com\hf\usercenter\model\request\UserRegisterRequest.class
+com\hf\usercenter\exception\GlobalExceptionHandler.class
+com\hf\usercenter\constant\UserConstant.class
+com\hf\usercenter\model\domain\User.class
+com\hf\usercenter\mapper\UserMapper.class
+com\hf\usercenter\utils\ResultUtils.class
+com\hf\usercenter\common\ErrorCode.class
+com\hf\usercenter\service\UserService.class
+com\hf\usercenter\common\BaseResponse.class
+com\hf\usercenter\exception\BusinessException.class
+com\hf\usercenter\UserCenterApplication.class
+com\hf\usercenter\model\request\UserLoginRequest.class
+com\hf\usercenter\service\impl\UserServiceImpl.class
