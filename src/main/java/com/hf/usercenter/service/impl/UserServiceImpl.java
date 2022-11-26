@@ -61,7 +61,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         if (matcher.find()) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR,"账号不可包含特殊字符");
         }
-        //密码和校验密码相同
+        //密码和校验密码不同
         if (!userPassword.equals(checkPassword)) {
             throw new BusinessException(ErrorCode.PARAMS_ERROR,"密码和校验密码不一致");
         }
@@ -108,7 +108,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         String regEx="[`~!@#$%^&*()+=|{}':;',\\[\\].<>/?~！@#￥%……&*（）——+|{}【】‘；：”“’。，、？]";
         Matcher matcher = Pattern.compile(regEx).matcher(userAccount);
         if (matcher.find()) {
-            throw new BusinessException(ErrorCode.PARAMS_ERROR,"账号包含特殊字符");
+            throw new BusinessException(ErrorCode.PARAMS_ERROR,"账号不能包含特殊字符");
         }
         //2.加密
         String encryptPassword = DigestUtils.md5DigestAsHex((SALT + userPassword).getBytes());
@@ -128,7 +128,6 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
         //4.记录用户的登录态
         request.getSession().setAttribute(USER_LOGIN_STATUS, safetyUser);
         return safetyUser;
-
     }
 
     /**
